@@ -1,0 +1,11 @@
+rm -f main
+`spack location -i cuda/2vj`/bin/nvcc -o main \
+	-I. -I`spack location -i cblas`/include \
+	main.cu  \
+	-L`spack location -i cblas`/lib \
+	-L`spack location -i blas`/lib \
+	-Xlinker -rpath=`spack location -i blas`/lib \
+	-lcblas -lopenblas
+Execution Time: 1.545 ms
+Throughput: 678721600.000 pixels/s
+Operations per Byte: 2.667

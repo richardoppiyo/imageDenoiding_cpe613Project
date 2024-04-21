@@ -1,0 +1,22 @@
+rm -f main
+nvcc -lineinfo -o main \
+	-I. -I`spack location -i cblas`/include \
+	main.cu  \
+	-L`spack location -i cblas`/lib \
+	-L`spack location -i blas`/lib \
+	-Xlinker -rpath=`spack location -i blas`/lib \
+	-lcblas -lopenblas
+Execution Time: 46.784286 ms
+Throughput: 1815452672.000000 operations/s
+Operations per Byte: 27.000000
+Generating '/tmp/romenyo/nsys-report-4491.qdstrm'
+[1/1] [0%                          ] report1.nsys-rep[1/1] [0%                          ] report1.nsys-rep[1/1] [9%                          ] report1.nsys-rep[1/1] [==18%                       ] report1.nsys-rep[1/1] [========40%                 ] report1.nsys-rep[1/1] [========41%                 ] report1.nsys-rep[1/1] [========42%                 ] report1.nsys-rep[1/1] [=========43%                ] report1.nsys-rep[1/1] [=========44%                ] report1.nsys-rep[1/1] [=========45%                ] report1.nsys-rep[1/1] [=========46%                ] report1.nsys-rep[1/1] [=============59%            ] report1.nsys-rep[1/1] [==============63%           ] report1.nsys-rep[1/1] [========================98% ] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep
+Generated:
+    /home/romenyo/project_work/nsight/modifiedKNN/report1.nsys-rep
+==PROF== Connected to process 197386 (/home/romenyo/project_work/nsight/modifiedKNN/main)
+==PROF== Profiling "denoiseImage" - 0: 0%....50%....100% - 44 passes
+==PROF== Disconnected from process 197386
+Execution Time: 3626.136230 ms
+Throughput: 23422908.000000 operations/s
+Operations per Byte: 27.000000
+==PROF== Report: /home/romenyo/project_work/nsight/modifiedKNN/profile.ncu-rep
