@@ -1,56 +1,86 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
 
-> Description the project.
+# Image Denoising Techniques using CUDA C++
+
+> The image denoising project involves optimizing a CUDA-based K-Nearest and Wiener filter implementation for image denoising, focusing on enhancing performance through efficient shared memory utilization and validating effectiveness using quantitative measures such as PSNR. Detailed performance analysis are conducted using NVIDIA Nsight Systems to ensure the filter not only reduces noise effectively but also operates at optimal speed and efficiency.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- CUDA C++
+- C++
+- Python
 
-## Live Demo (if available)
+## Tools used
 
-[Live Demo Link](https://livedemo.com)
+- NVIDIA Nsight Compute
+- VSCODE
+
+## GPU Architecture Used
+
+- Hopper H100
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+The set-up for this project is on a PBS(Portable Batch System) for job scheduling. Make sure you are not on a non-supported system like SLURM. 
+The project can however work on other systems like slurm based system. You have to make sure that your job submission is supported. In that case, use the main.cu file in your setup.
 
-### Setup
+## Configuration and set-up
 
-### Install
+- Kindly ensure that your environments supports the following:
+  + CUDA C++
+  + C++
+  + Python
 
-### Usage
+- Cloning the repository
+  - ```
+    https://github.com/richardoppiyo/imageDenoiding_cpe613Project.git
+    ```
+
+- Navigate to the project's root folder to see the different version:
+  - ```
+    cd imageDenoiding_cpe613Project
+    ```
+
+- To run a particular version, navigate into its folder. Example below:
+  - ```
+    cd modifiedKNN/
+    ```
+    Once you are in this folder, run the job as follows:
+
+    ```
+        ./runjob.sh
+    ```
+
+    output file will be created where you can view the performance information and outputImage.txt will also be generated, which is processed further to get teh denoised image
 
 ### Run tests
+- To run a test version, navigate into nsight folder and to the version folder. Example below:
+  - ```
+    cd nsight/modifiedKNN/
 
-### Deployment
+    ```
+    Once you are in this folder, run the job as follows:
+
+    ```
+        ./runjob.sh
+    ```
+
+    In addition to the output files, profile.ncu-rep and report1.nsys-rep will be generated which can be used in the Nsight compute system for performnce visualization
 
 
+## Author
 
-## Authors
+👤 **Richard Opiyo Omenyo**
 
-👤 **Author1**
+- GitHub: [@richaroppiyo](https://github.com/richardoppiyo)
+- Twitter: [@blessed_ricky](https://twitter.com/blessed_ricky)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/richardoppiyo/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -64,6 +94,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- Dr. Wise, my Instructor for CPE613 at the University of Alabama.
 - Hat tip to anyone whose code was used
 - Inspiration
 - etc
