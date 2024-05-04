@@ -16,6 +16,17 @@
 - NVIDIA Nsight Compute
 - VSCODE
 
+## Install the required Python dependencies
+
+- numpy for psnr calculation
+  ```
+    pip3 install numpy
+  ```
+
+  ```
+    pip3 install cv2
+  ```
+ 
 ## GPU Architecture Used
 
 - Hopper H100
@@ -72,6 +83,27 @@ The project can however work on other systems like slurm based system. You have 
 
     In addition to the output files, profile.ncu-rep and report1.nsys-rep will be generated which can be used in the Nsight compute system for performnce visualization
 
+### Run PSNR
+- To run a PSNR, navigate into psnr folder and to the version folder. Example below:
+  - ```
+    cd psnr/modifiedKNN/
+
+    ```
+   You can run the following command to reconstruct an image to be fed to the psnr function from the rgb values produced from the previous step
+    ```
+    python3 convert_to_img.py
+
+    ```
+    This produces an image which is the input to the find_psnr file. Make sure to configure the paths within the files appropriately.
+
+    Then run the psnr file as follows:
+
+    ```
+        python3 find_psnr.py
+    ```
+
+    This prints the outputs as the value of calculated PSNR between the reference input image and the denoised inage. The value is displayed on the terminal.
+
 
 ## Author
 
@@ -97,7 +129,6 @@ Give a ⭐️ if you like this project!
 - Dr. Wise, my Instructor for CPE613 at the University of Alabama.
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc
 
 ## 📝 License
 
