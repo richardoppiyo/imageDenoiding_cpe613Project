@@ -1,0 +1,16 @@
+rm -f main
+nvcc -lineinfo -o main \
+	-I. -I`spack location -i cblas`/include \
+	main.cu  \
+	-L`spack location -i cblas`/lib \
+	-L`spack location -i blas`/lib \
+	-Xlinker -rpath=`spack location -i blas`/lib \
+	-lcblas -lopenblas
+Generating '/tmp/romenyo/nsys-report-b1a8.qdstrm'
+[1/1] [0%                          ] report1.nsys-rep[1/1] [0%                          ] report1.nsys-rep[1/1] [9%                          ] report1.nsys-rep[1/1] [==18%                       ] report1.nsys-rep[1/1] [========40%                 ] report1.nsys-rep[1/1] [========41%                 ] report1.nsys-rep[1/1] [========42%                 ] report1.nsys-rep[1/1] [=========43%                ] report1.nsys-rep[1/1] [=========44%                ] report1.nsys-rep[1/1] [=========45%                ] report1.nsys-rep[1/1] [============57%             ] report1.nsys-rep[1/1] [==============63%           ] report1.nsys-rep[1/1] [========================99% ] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep
+Generated:
+    /home/romenyo/project_work/nsight/naiveKNN/report1.nsys-rep
+==PROF== Connected to process 198278 (/home/romenyo/project_work/nsight/naiveKNN/main)
+==PROF== Profiling "denoiseImage" - 0: 0%....50%....100% - 44 passes
+==PROF== Disconnected from process 198278
+==PROF== Report: /home/romenyo/project_work/nsight/naiveKNN/profile.ncu-rep

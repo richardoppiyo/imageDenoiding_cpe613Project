@@ -1,0 +1,22 @@
+rm -f main
+nvcc -lineinfo -o main \
+	-I. -I`spack location -i cblas`/include \
+	main.cu  \
+	-L`spack location -i cblas`/lib \
+	-L`spack location -i blas`/lib \
+	-Xlinker -rpath=`spack location -i blas`/lib \
+	-lcblas -lopenblas
+Execution Time (ms): 51.787422
+Throughput (pixels/s): 20247696.368278
+Operations per Byte: 1.666667
+Generating '/tmp/romenyo/nsys-report-fd63.qdstrm'
+[1/1] [0%                          ] report1.nsys-rep[1/1] [0%                          ] report1.nsys-rep[1/1] [9%                          ] report1.nsys-rep[1/1] [==18%                       ] report1.nsys-rep[1/1] [========40%                 ] report1.nsys-rep[1/1] [========41%                 ] report1.nsys-rep[1/1] [========42%                 ] report1.nsys-rep[1/1] [=========43%                ] report1.nsys-rep[1/1] [=========44%                ] report1.nsys-rep[1/1] [=========45%                ] report1.nsys-rep[1/1] [=========46%                ] report1.nsys-rep[1/1] [============57%             ] report1.nsys-rep[1/1] [==============64%           ] report1.nsys-rep[1/1] [========================98% ] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep
+Generated:
+    /home/romenyo/project_work/nsight/naiveWiener/report1.nsys-rep
+==PROF== Connected to process 198711 (/home/romenyo/project_work/nsight/naiveWiener/main)
+==PROF== Profiling "denoiseImageWiener" - 0: 0%....50%....100% - 44 passes
+==PROF== Disconnected from process 198711
+Execution Time (ms): 3681.676758
+Throughput (pixels/s): 284809.359696
+Operations per Byte: 1.666667
+==PROF== Report: /home/romenyo/project_work/nsight/naiveWiener/profile.ncu-rep

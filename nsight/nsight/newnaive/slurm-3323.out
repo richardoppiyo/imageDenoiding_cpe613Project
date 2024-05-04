@@ -1,0 +1,27 @@
+rm -f main
+nvcc -lineinfo -o main \
+	-I. -I`spack location -i cblas`/include \
+	main.cu  \
+	-L`spack location -i cblas`/lib \
+	-L`spack location -i blas`/lib \
+	-Xlinker -rpath=`spack location -i blas`/lib \
+	-lcblas -lopenblas
+Time taken for 64 input Single precision:
+N = 64 , Time in milliseconds:  22.0951192448846996
+Time taken for 128 input Single precision:
+N = 128 , Time in milliseconds:   0.0160320000723004
+Generating '/tmp/romenyo/nsys-report-5b02.qdstrm'
+[1/1] [0%                          ] report2.nsys-rep[1/1] [0%                          ] report2.nsys-rep[1/1] [11%                         ] report2.nsys-rep[1/1] [==21%                       ] report2.nsys-rep[1/1] [=======38%                  ] report2.nsys-rep[1/1] [=======39%                  ] report2.nsys-rep[1/1] [========40%                 ] report2.nsys-rep[1/1] [========41%                 ] report2.nsys-rep[1/1] [========42%                 ] report2.nsys-rep[1/1] [=========43%                ] report2.nsys-rep[1/1] [=========44%                ] report2.nsys-rep[1/1] [===========53%              ] report2.nsys-rep[1/1] [============56%             ] report2.nsys-rep[1/1] [========================98% ] report2.nsys-rep[1/1] [========================100%] report2.nsys-rep[1/1] [========================100%] report2.nsys-rep
+Generated:
+    /home/romenyo/project_work/nsight/newnaive/report2.nsys-rep
+==PROF== Connected to process 196822 (/home/romenyo/project_work/nsight/newnaive/main)
+==PROF== Profiling "matrixMultiply" - 0: 0%....50%....100% - 44 passes
+==PROF== Profiling "matrixMultiply" - 1: 0%....50%....100% - 44 passes
+==PROF== Profiling "matrixMultiply" - 2: 0%....50%....100% - 44 passes
+==PROF== Profiling "matrixMultiply" - 3: 0%....50%....100% - 44 passes
+==PROF== Disconnected from process 196822
+Time taken for 64 input Single precision:
+N = 64 , Time in milliseconds: 4720.1503906250000000
+Time taken for 128 input Single precision:
+N = 128 , Time in milliseconds: 2778.3096923828125000
+==PROF== Report: /home/romenyo/project_work/nsight/newnaive/profile.ncu-rep
