@@ -99,7 +99,7 @@ The project can however work on other systems like slurm based system. You have 
     Then run the psnr file as follows:
 
     ```
-        python3 find_psnr.py
+     python3 find_psnr.py
     ```
 
     This prints the outputs as the value of calculated PSNR between the reference input image and the denoised inage. The value is displayed on the terminal.
